@@ -68,7 +68,11 @@ body {
   align-items: center;
   /*----- Designer -----*/
   border: 2px solid black;
-  background-image: linear-gradient(-180deg, rgba(11, 0, 109, 1) 30%, rgba(255, 0, 0, 1) 80%);
+  background-image: linear-gradient(
+    -180deg,
+    rgba(11, 0, 109, 1) 30%,
+    rgba(255, 0, 0, 1) 80%
+  );
   background-size: 100% 100%;
   opacity: 1;
 }
@@ -145,6 +149,8 @@ body {
   background-color: white;
   border: 2px solid white;
   border-radius: 10%;
+
+  transition: all 0.3s;
 }
 
 .button {
@@ -161,8 +167,7 @@ body {
 .boxConfig {
   width: 100%;
   height: 20%;
-  max-height: 300px;
-  min-height: 200px;
+  min-height: 150px;
 
   margin: 0 auto;
   position: absolute;
@@ -170,30 +175,66 @@ body {
   display: none;
   flex-wrap: wrap;
 
-  background-color: rgba(184, 184, 184, 0.315);
+  background-color: rgba(83, 83, 83, 0.534);
   border-bottom: 2px solid white;
+  transition: all 0.3s;
 }
 
-.orgBoxConfig {
-  width: 85%;
-  left: 0;
+.nav {
+  width: 80%;
+  height: 30%;
+  top: 0;
+
   display: flex;
-  position: ab;
-  margin: 2px 5px;
-
-  font-family: "Minimal";
+  position: block;
+  justify-content: center;
 }
 
-.orgBoxConfig p {
+.nav ul {
+  width: 100%;
   margin: 0;
-  font-size: 30px;
+  padding: 0;
+
+  display: flex;
+  list-style-type: none;
+}
+
+.navList {
+  width: 100%;
+  margin: 0;
+  padding: 0 auto;
   text-align: center;
+  display: block;
+}
+
+.navList p {
+  position: relative;
+  margin-top: 10px;
+  font-family: Minimal;
+  font-size: 30px;
+  font-style: oblique;
+  color: black;
+
+  transition: all 0.5s;
+}
+
+.navList p:hover {
+  background-color: black;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.buttonsConfig {
+  display: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 .boxButton {
   position: absolute;
-  display: inline-block;
-
+  display: block;
+  margin: 2px;
+  padding-left: 20px;
   right: 0;
   bottom: 0;
 }
@@ -202,90 +243,125 @@ body {
   width: calc(10vw + 5px);
   height: calc(5vh + 2px);
 
-  display: inline-block;
+  display: block;
 
   background-color: rgba(245, 245, 245, 0.603);
   border: 1px solid black;
   border-radius: 10%;
   font-size: 25px;
   font-family: "Minimal";
+  transition: all 0.3s;
 }
-
 
 .boxButton button:hover {
   background-color: rgba(0, 0, 0, 0.603);
   border: 1px solid rgb(255, 255, 255);
   color: white;
-
-}
-
-.box {
-  margin: 5px;
-
-  flex-grow: 1;
-  box-sizing: border-box;
-  border-right: 2px solid white;
-}
-
-.box p {
-  margin-top: 0px;
-}
-
-.boxInput p {
-  top: 2px;
-
-  color: white;
-}
-
-.boxInput input {
-  margin-bottom: 3px;
-  font-size: 20px;
-  border-radius: 5px;
-  background-color: transparent;
-  color: rgb(0, 0, 0);
-  border: 1px solid white;
-}
-
-.boxInput input:hover {
-  border: 2px solid white;
 }
 
 /*--------------------- ANIMATIONS---------------------*/
 @keyframes changeColorFace {
   0% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 10%, var(--animationFace1) 10%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 10%,
+      var(--animationFace1) 10%
+    );
   }
 
   20% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 10%, var(--animationFace1) 10%, var(--animationFace2) 32%, var(--animationFace1) 32%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 10%,
+      var(--animationFace1) 10%,
+      var(--animationFace2) 32%,
+      var(--animationFace1) 32%
+    );
   }
 
   30% {
-    background-image: radial-gradient(circle at center, var(--animationFace1) 10%, var(--animationFace2) 32%, var(--animationFace1) 32%, var(--animationFace2) 54%, var(--animationFace1) 54%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace1) 10%,
+      var(--animationFace2) 32%,
+      var(--animationFace1) 32%,
+      var(--animationFace2) 54%,
+      var(--animationFace1) 54%
+    );
   }
 
   40% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 10%, var(--animationFace1) 10%, var(--animationFace2) 32%, var(--animationFace1) 32%, var(--animationFace2) 54%, var(--animationFace1) 54%, var(--animationFace2) 78%, var(--animationFace1) 78%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 10%,
+      var(--animationFace1) 10%,
+      var(--animationFace2) 32%,
+      var(--animationFace1) 32%,
+      var(--animationFace2) 54%,
+      var(--animationFace1) 54%,
+      var(--animationFace2) 78%,
+      var(--animationFace1) 78%
+    );
   }
 
   50% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 10%, var(--animationFace1) 10%, var(--animationFace2) 32%, var(--animationFace1) 32%, var(--animationFace2) 54%, var(--animationFace1) 54%, var(--animationFace2) 78%, var(--animationFace1) 78%, var(--animationFace2) 100%, var(--animationFace1) 100%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 10%,
+      var(--animationFace1) 10%,
+      var(--animationFace2) 32%,
+      var(--animationFace1) 32%,
+      var(--animationFace2) 54%,
+      var(--animationFace1) 54%,
+      var(--animationFace2) 78%,
+      var(--animationFace1) 78%,
+      var(--animationFace2) 100%,
+      var(--animationFace1) 100%
+    );
   }
 
   60% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 32%, var(--animationFace1) 32%, var(--animationFace2) 54%, var(--animationFace1) 54%, var(--animationFace2) 78%, var(--animationFace1) 78%, var(--animationFace2) 100%, var(--animationFace1) 100%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 32%,
+      var(--animationFace1) 32%,
+      var(--animationFace2) 54%,
+      var(--animationFace1) 54%,
+      var(--animationFace2) 78%,
+      var(--animationFace1) 78%,
+      var(--animationFace2) 100%,
+      var(--animationFace1) 100%
+    );
   }
 
   70% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 54%, var(--animationFace1) 54%, var(--animationFace2) 78%, var(--animationFace1) 78%, var(--animationFace2) 100%, var(--animationFace1) 100%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 54%,
+      var(--animationFace1) 54%,
+      var(--animationFace2) 78%,
+      var(--animationFace1) 78%,
+      var(--animationFace2) 100%,
+      var(--animationFace1) 100%
+    );
   }
 
   80% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 78%, var(--animationFace1) 78%, var(--animationFace2) 100%, var(--animationFace1) 100%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 78%,
+      var(--animationFace1) 78%,
+      var(--animationFace2) 100%,
+      var(--animationFace1) 100%
+    );
   }
 
   100% {
-    background-image: radial-gradient(circle at center, var(--animationFace2) 100%, var(--animationFace1) 100%);
+    background-image: radial-gradient(
+      circle at center,
+      var(--animationFace2) 100%,
+      var(--animationFace1) 100%
+    );
   }
 }
 
